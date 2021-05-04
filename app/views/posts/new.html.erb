@@ -1,19 +1,19 @@
 <h2>Add new post</h2>
 
-<%= form_with model: @post, url: posts_path, class: "newForm" do |f| %>
+<%= form_with model: @post, url: posts_path, class: "form" do |f| %>
 <p>
-  <%= f.text_field :title, placeholder: "enter title", class: "newForm_title" %>
+  <%= f.text_field :title, placeholder: "enter title", class: "form_title" %>
   <% if @post.errors.messages[:title].any? # エラーメッセージが存在するかどうか %>
   <span class="error"><%= @post.errors.messages[:title][0] %></span>
   <% end %>
 </p>
 <p>
-  <%= f.text_area :body, placeholder: "enter body text", class: "newForm_body" %>
+  <%= f.text_area :body, placeholder: "enter body text", class: "form_body" %>
   <% if @post.errors.messages[:body].any? # エラーメッセージが存在するかどうか %>
   <span class="error"><%= @post.errors.messages[:body][0] %></span>
   <% end %>
 </p>
 <p>
-  <%= f.submit "Create", class: "newForm_submit" %>
+  <%= f.submit "Create", class: "form_submit" %>
 </p>
 <% end %>

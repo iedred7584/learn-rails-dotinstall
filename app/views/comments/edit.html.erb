@@ -1,0 +1,10 @@
+<h2>Edit comment</h2>
+
+<%= form_with model: [@post, @comment], class: "form" do |f| %>
+<p>
+  <%= f.text_field :body, placeholder: "enter title", class: "form_body" %>
+</p>
+<p>
+  <%= f.submit class: "form_submit" %>
+</p>
+<% end %>

@@ -8,6 +8,7 @@
   <% @post.comments.each do |comment| %>
   <li>
     <%= comment.body %>
+    <%= link_to "[edit]", edit_post_comment_path(@post.id, comment.id), class: "edit" %>
     <%=
       link_to "[delete]",
       post_comment_path(@post.id, comment.id),

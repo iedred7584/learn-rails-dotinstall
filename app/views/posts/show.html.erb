@@ -5,9 +5,6 @@
 <%= form_with model: [@post, @comment], class: "form" do |f| %>
 <p>
   <%= f.text_field :body, placeholder: "enter comment", class: "form_comment" %>
-  <% if @post.errors.messages[:title].any? # エラーメッセージが存在するかどうか %>
-  <span class="error"><%= @post.errors.messages[:title][0] %></span>
-  <% end %>
 </p>
 <p>
   <%= f.submit class: "form_submit" %>

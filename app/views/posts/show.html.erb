@@ -6,7 +6,16 @@
 <% if @post.comments.any? %>
 <ul>
   <% @post.comments.each do |comment| %>
-  <li><%= comment.body %></li>
+  <li>
+    <%= comment.body %>
+    <%=
+      link_to "[delete]",
+      post_comment_path(@post.id, comment.id),
+      method: :delete,
+      class: "delete",
+      data: { confirm: "Delete?" }
+    %>
+  </li>
   <% end %>
 </ul>
 <% end %>
